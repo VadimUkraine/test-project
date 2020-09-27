@@ -1,0 +1,52 @@
+.todo-task{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+&__delete{
+ position: relative;
+  cursor: pointer;
+}
+
+&__task-line_up{
+  height: 2px;
+  background-color: black;
+  width: 15px;
+  display: block;
+  transform: rotate(-45deg);
+}
+
+&__task-line_down{
+  height: 2px;
+  background-color: black;
+  width: 15px;
+  display: block;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0px;
+  right: -1px;
+}
+
+&__checkbx{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+&__name{
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  display: block;
+  width: 400px;
+
+  &--completed{
+    text-decoration: line-through;
+  }
+
+}
+
+
+}
+
+
