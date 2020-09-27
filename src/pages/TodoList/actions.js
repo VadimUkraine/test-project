@@ -1,6 +1,10 @@
 import { createAction } from 'redux-actions';
 import * as a from './constants';
 
+export const getTasksRequest = createAction(
+  a.GET_TASKS_REQUEST,
+);
+
 
 export const getTasksSucceed = createAction(
   a.GET_TASKS_SUCCEED,

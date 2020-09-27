@@ -1,5 +1,5 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
-import { ADD_TASK_REQUEST, DELETE_TASK_REQUEST, UPDATE_TASK_REQUEST }  from './constants'
+import { GET_TASKS_REQUEST, ADD_TASK_REQUEST, DELETE_TASK_REQUEST, UPDATE_TASK_REQUEST }  from './constants'
 import { updateTaskSucceed, getTasksSucceed, getTasksFailed, addTaskSucceed, addTaskFailed, deleteTaskSucceed, deleteTaskFailed } from "./actions";
 import {todoService} from './service';
 
@@ -65,7 +65,7 @@ function *getAllTasks() {
 
 
 export default function *todoSagaWatcher() {
-  yield call(getAllTasks)
+  yield takeLatest(GET_TASKS_REQUEST, getAllTasks);
   yield takeLatest(ADD_TASK_REQUEST, addTask);
   yield takeLatest(DELETE_TASK_REQUEST, deleteTask);
   yield takeLatest(UPDATE_TASK_REQUEST, updateTask);  
